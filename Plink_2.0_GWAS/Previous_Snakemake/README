@@ -1,0 +1,12 @@
+This workflow performs basic GWAS using plink 2.0 and includes some preprocessing QC.
+WARNING: Plink 2.0 can be particularly fussy about having normally-distributed quantitative variables
+            thus, I have implemented automatic standardization.
+            This is a linear transformation and the results can be un-transformed, but beware.
+
+Main Target Output File: Summary/plink_2.0_all_suggestive.csv
+
+Required Input Files:
+- for each cohort directory:
+    - cohort_dir/sample_list.txt (list of samples to subset from genotype data)
+    - cohort_dir/plink2_pheno.txt (whitespace-delimited, starts with FID IID)
+    - cohort_dir/plink2_covars.txt (whitespace-delimited, starts with FID IID)

@@ -1,0 +1,21 @@
+#!/bin/bash
+#BSUB -q epistasis_long
+#BSUB -J plink2test
+#BSUB -o plink2test.%J.out
+#BSUB -e plink2test.%J.err
+
+# load modules
+module purge
+module load nextflow
+#module load singularity
+
+# Setup
+WDIR="/project/pmbb_codeworks/projects/geno_pheno_workbench_dev/Plink2.0_ZBR"
+cd $WDIR
+
+# full run
+nextflow run plink2_gwas_main.nf -profile standard -with-dag
+# Cluster Run
+# nextflow run saige_exwas.nf -stub -profile cluster -with-dag saige_exwas_DAG.png
+
+# to Run: bsub <saigefull.bsub

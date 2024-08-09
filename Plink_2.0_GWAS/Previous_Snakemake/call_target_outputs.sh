@@ -1,0 +1,1 @@
+snakemake -n Summary/plink2_all_suggestive.csv Summary/lifted_plink2_all_suggestive.csv
