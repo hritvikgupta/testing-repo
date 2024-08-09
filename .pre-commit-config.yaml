@@ -1,0 +1,11 @@
+repos:
+  - repo: https://github.com/hritvikgupta/verma-lab-testing.git
+    rev: main  # or specify a specific tag or commit hash
+    hooks:
+      - id: clean-testing-repo-files
+        name: Clean Files Using Testing Repo Hook
+        entry: python clean_paths_files.py
+        language: python
+        args:
+          - "PMBB"
+        stages: [commit]
