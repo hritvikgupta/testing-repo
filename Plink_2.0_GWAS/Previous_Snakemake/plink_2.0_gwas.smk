@@ -1,5 +1,5 @@
-include: '/project/ritchie/lindsay_snakemake_workflows/liftover_wrapper/Snakefile'
-include: '/project/ritchie/lindsay_snakemake_workflows/biofilter_wrapper/Snakefile'
+include: 'dummyritchie/lindsay_snakemake_workflows/liftover_wrapper/Snakefile'
+include: 'dummyritchie/lindsay_snakemake_workflows/biofilter_wrapper/Snakefile'
 
 configfile: 'config_plink_2.0_gwas.yaml'
 
@@ -39,7 +39,7 @@ rule call_plink2_logistic:
         covar='{cohort_dir}/plink2_covars_standardized.txt',
         plink_set=expand(config['plink_prefix'] + '{{chr}}{ext}', ext=config['plink_extensions']),
         samples='{cohort_dir}/sample_list.txt',
-        longrange='/project/ritchie/datasets/Longrange_Regions/longrange_LD_hg' + config['build'] + '.bed'
+        longrange='dummyritchie/datasets/Longrange_Regions/longrange_LD_hg' + config['build'] + '.bed'
     params:
         covar_list=lambda wildcards: ','.join([c for c in config['plink_covars'] if (wildcards.cohort_dir not in config['sex_strat_cohorts']) or (c not in config['sex_dependent_covars'])]),
         output_prefix='{cohort_dir}/GWAS_Results/bin_phenos.{chr}',
@@ -79,7 +79,7 @@ rule call_plink2_linear:
         covar='{cohort_dir}/plink2_covars_standardized.txt',
         plink_set=expand(config['plink_prefix'] + '{{chr}}{ext}', ext=config['plink_extensions']),
         samples='{cohort_dir}/sample_list.txt',
-        longrange='/project/ritchie/datasets/Longrange_Regions/longrange_LD_hg' + config['build'] + '.bed'
+        longrange='dummyritchie/datasets/Longrange_Regions/longrange_LD_hg' + config['build'] + '.bed'
     params:
         covar_list=lambda wildcards: ','.join([c for c in config['plink_covars'] if (wildcards.cohort_dir not in config['sex_strat_cohorts']) or (c not in config['sex_dependent_covars'])]),
         output_prefix='{cohort_dir}/GWAS_Results/quant_phenos.{chr}',

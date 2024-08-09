@@ -48,7 +48,7 @@ output_manhattan = f'{output_dir}/{cohort}.{pheno}.manhattan.png'
 output_qq = f'{output_dir}/{cohort}.{pheno}.qq.png'
 
 # Example output file to be used lives in:
-# /project/pmbb_codeworks/projects/geno_pheno_workbench_dev/GWAMA_META/Meta/Sumstats/*.gz
+# dummypmbb_codeworks/projects/geno_pheno_workbench_dev/GWAMA_META/Meta/Sumstats/*.gz
 
 # Instantiate manhattan plot object
 plot_title = f'Plink2 GWAS Manhattan for {cohort}: {pheno.replace("_", " ")}'

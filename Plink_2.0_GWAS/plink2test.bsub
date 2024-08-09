@@ -10,7 +10,7 @@ module load nextflow
 #module load singularity
 
 # Setup
-WDIR="/project/pmbb_codeworks/projects/geno_pheno_workbench_dev/Plink2.0_ZBR"
+WDIR="dummypmbb_codeworks/projects/geno_pheno_workbench_dev/Plink2.0_ZBR"
 cd $WDIR
 
 # full run
