@@ -1,12 +1,3 @@
-# repos:
-#   - repo: https://github.com/hritvikgupta/verma-lab-testing.git
-#     rev: main  # or specify a specific tag or commit hash
-#     hooks:
-#       - id: clean-config-files
-#         name: Clean Files Using testing Repo Hook
-#         entry: bash -c "curl -s https://raw.githubusercontent.com/hritvikgupta/verma-lab-testing/main/clean_paths_files.py | python3 - 'PMBB' 'project' 'home/user' 'something' --directories='src,Plink_2.0_GWAS,PLINK' --replacement='/path'"
-#         language: system
-#         stages: [commit]
 repos:
   - repo: https://github.com/hritvikgupta/verma-lab-testing.git
     rev: main  # or specify a specific tag or commit hash
@@ -16,4 +7,4 @@ repos:
         entry: bash -c "curl -s https://raw.githubusercontent.com/hritvikgupta/verma-lab-testing/main/clean_paths_files.py | python3 - 'PMBB' 'project' 'home/user' 'something' --directories='src,Plink_2.0_GWAS,PLINK' --replacement='/path'"
         language: system
         stages: [commit]
-
+  
